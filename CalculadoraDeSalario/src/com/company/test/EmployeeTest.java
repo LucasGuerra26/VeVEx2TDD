@@ -1,5 +1,6 @@
-package com.company.model;
+package com.company.test;
 
+import com.company.model.Employee;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
