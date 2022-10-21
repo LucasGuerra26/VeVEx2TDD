@@ -1,21 +1,20 @@
 package com.company.controller;
 
 import com.company.model.Employee;
-import com.company.service.CreateEmployeeService;
-import com.company.service.CreateEmployeeServiceImpl;
-import com.company.service.UpdateOfficeService;
-import com.company.service.UpdateOfficeServiceImpl;
+import com.company.service.*;
 
 import java.util.ArrayList;
 
 public class EmployeeController {
     private CreateEmployeeService createEmployeeService;
     private UpdateOfficeService updateOfficeService;
+    private CalculateRealSalaryService calculateRealSalaryService;
     private ArrayList<Employee> employees;
 
     public EmployeeController(){
         createEmployeeService = new CreateEmployeeServiceImpl();
         updateOfficeService = new UpdateOfficeServiceImpl();
+        calculateRealSalaryService = new CalculateRealSalaryServiceImpl();
         employees = new ArrayList<>();
     }
 
@@ -27,6 +26,10 @@ public class EmployeeController {
 
     public void updateOffice(Employee employee, String office){
         updateOfficeService.updateOffice(employee, office);
+    }
+
+    public void calculateRealSalary(Employee employee){
+        calculateRealSalaryService.calculate(employee);
     }
 
 }
