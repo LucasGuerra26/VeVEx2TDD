@@ -22,4 +22,12 @@ class EmployeeControllerTest {
         assertEquals("ad@g.com", e.getEmail());
         assertEquals("DESENVOLVEDOR", e.getOffice());
     }
+
+    @Test
+    void updateOfficeTest(){
+        Employee e = employeeController.createEmployee(123456789, "Adeildo", "ad@g.com", 3000, "DESENVOLVEDOR");
+        assertEquals("DESENVOLVEDOR", e.getOffice());
+        employeeController.updateOffice(e, "GERENTE");
+        assertEquals("GERENTE", e.getOffice());
+    }
 }
