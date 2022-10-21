@@ -6,6 +6,7 @@ public class Employee {
     private String name;
     private String email;
     private double baseSalary;
+    private double realSalary;
     private String office;
 
     public Employee(long cpf, String name, String email, double baseSalary, String office){
@@ -34,5 +35,33 @@ public class Employee {
 
     public double getBaseSalary(){
         return baseSalary;
+    }
+
+    public double getRealSalary(){
+        return realSalary;
+    }
+
+    public void calculateRealSalary(){
+        if (office.equals("DESENVOLVEDOR")){
+            if (baseSalary>=3000){
+                realSalary = baseSalary - 0.2*baseSalary;
+            } else {
+                realSalary = baseSalary - 0.1*baseSalary;
+            }
+        }
+        else if (office.equals("DBA") || office.equals("TESTADOR")){
+            if (baseSalary>=2000){
+                realSalary = baseSalary - 0.25*baseSalary;
+            } else {
+                realSalary = baseSalary - 0.15*baseSalary;
+            }
+        }
+        else {
+            if (baseSalary>=5000){
+                realSalary = baseSalary - 0.3*baseSalary;
+            } else {
+                realSalary = baseSalary - 0.2*baseSalary;
+            }
+        }
     }
 }
