@@ -41,6 +41,10 @@ public class Employee {
         return realSalary;
     }
 
+    public void setOffice(String office){
+        this.office = office;
+    }
+
     public void calculateRealSalary(){
         if (office.equals("DESENVOLVEDOR")){
             if (baseSalary>=3000){
