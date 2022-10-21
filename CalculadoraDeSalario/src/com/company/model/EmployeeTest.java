@@ -20,7 +20,6 @@ class EmployeeTest {
         assertEquals("ad@g.com", e.getEmail());
         assertEquals(3000, e.getBaseSalary());
         assertEquals("DESENVOLVEDOR", e.getOffice());
-
     }
 
     @Test
@@ -60,5 +59,13 @@ class EmployeeTest {
         e2.calculateRealSalary();
         assertEquals(4200, e.getRealSalary());
         assertEquals(3600, e2.getRealSalary());
+    }
+
+    @Test
+    void setOfficeTest(){
+        Employee e = new Employee(123456789, "Adeildo", "ad@g.com", 6000, "DESENVOLVEDOR");
+        assertEquals("DESENVOLVEDOR", e.getOffice());
+        e.setOffice("GERENTE");
+        assertEquals("GERENTE", e.getOffice());
     }
 }
